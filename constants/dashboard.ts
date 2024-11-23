@@ -4,24 +4,20 @@ export const SIDEBAR = [{
     icon: "ri-dashboard-horizontal-line"
 },{
     title: "Tables",
-    url: "/dashboard/tasks",
-    icon: "ri-task-line"
+    url: "/dashboard/tables",
+    icon: "ri-table-line"
 },{
     title: "Charts",
-    url: "/dashboard/inbox",
-    icon: "ri-mail-unread-line"
+    url: "/dashboard/charts",
+    icon: "ri-bar-chart-line"
 },
 {
     title: "Forms",
-    url: "/dashboard/inbox",
-    icon: "ri-mail-unread-line"
+    url: "#",
+    icon: "ri-survey-line"
 },{
-    title: "Profile",
-    url: "/dashboard/inbox",
-    icon: "ri-mail-unread-line"
-},{
-    title: "Helps",
-    url: "/dashboard/inbox",
-    icon: "ri-mail-unread-line"
+    title: "Settings",
+    url: "/#",
+    icon: "ri-settings-2-line"
 }
 ]
