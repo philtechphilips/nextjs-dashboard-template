@@ -1,0 +1,53 @@
+import React, { useEffect, useState } from "react";
+import "remixicon/fonts/remixicon.css";
+import Link from "next/link";
+import useUserStore from "@/store/userStore";
+import { usePathname, useRouter } from "next/navigation";
+import styles from "../../app/styles/dashboard.module.scss";
+import { SIDEBAR } from "@/constants/dashboard";
+import { COLOURS } from "@/constants/colors";
+
+
+const Sidebar = () => {
+  const currentPath = usePathname();
+  const { clearUser } = useUserStore();
+  const router = useRouter();
+
+  const logOut = () => {
+    clearUser();
+    router.push("/auth/sign-in");
+  }
+
+  return (
+    <aside className={`w-60 bg-[#F9F9FA] border-r h-screen fixed top-0 left-0`}>
+
+      <div className="px-5 pt-10">
+          <h1 className="font-base text-xl">Logo</h1>
+          <h1 className="font-base text-xl">Here</h1>
+      </div>
+      <div className="px-3 py-5">
+        <h4 className="font-bold text-gray-700 py-5 px-2 mb-3 text-sm">Menu</h4>
+        <ul className="flex flex-col gap-5">
+          {SIDEBAR &&
+            SIDEBAR.map((item, index) => (
+              <li
+                key={index}
+                className={`flex items-center gap-2 px-3 py-3 ${
+                  currentPath === item?.url ? `bg-[#4253F0] text-gray-50 rounded-md` : "text-gray-700"
+                }`}
+              >
+                <i className={`${item?.icon}`}></i>
+                <Link href={item?.url}>
+                  <p className={`text-sm`}>{item?.title}</p>
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </div>
+
+
+    </aside>
+  );
+};
+
+export default Sidebar;
