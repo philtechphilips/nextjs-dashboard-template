@@ -3,6 +3,7 @@ import { BarChartData } from "@/constants/data";
 import DashboardLayout from "@/layouts/dasboard";
 import Tables from "../tables/page";
 import Table from "@/components/dashboard/home/Table";
+import Analytics from "@/components/dashboard/home/Analytics";
 
 export default function Dashboard() {
   return (
@@ -16,6 +17,8 @@ export default function Dashboard() {
         </p>
 
         <section className="mt-20">
+          <Analytics />
+          
           <div className="bg-white rounded-xl p-5 w-full flex flex-col gap-5">
             <h1 className="text-gray-700">Bar Chart</h1>
             <ChartOne chartData={BarChartData.chartData} />
