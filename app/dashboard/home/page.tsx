@@ -4,6 +4,7 @@ import DashboardLayout from "@/layouts/dasboard";
 import Tables from "../tables/page";
 import Table from "@/components/dashboard/home/Table";
 import Analytics from "@/components/dashboard/home/Analytics";
+import Calendar from "@/components/dashboard/home/Calendar";
 
 export default function Dashboard() {
   return (
@@ -18,6 +19,8 @@ export default function Dashboard() {
 
         <section className="mt-20">
           <Analytics />
+
+          {/* <Calendar/> */}
 
           <div className="bg-white rounded-xl p-5 w-full flex flex-col gap-5">
             <h1 className="text-gray-700">Bar Chart</h1>
