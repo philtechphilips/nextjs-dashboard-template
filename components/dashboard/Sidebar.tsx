@@ -32,7 +32,7 @@ const Sidebar = () => {
       </div>
 
       <div className="absolute top-3 right-4" onClick={toggleOpen}>
-      <i className="ri-close-large-fill text-2xl"></i>
+      <i className="ri-close-large-fill text-2xl md:hidden flex"></i>
       </div>
       <div className="px-3 py-5">
         <h4 className="font-bold text-gray-700 py-5 px-2 mb-3 text-sm">Menu</h4>
