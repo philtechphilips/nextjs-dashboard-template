@@ -6,9 +6,11 @@ import { usePathname, useRouter } from "next/navigation";
 import styles from "../../app/styles/dashboard.module.scss";
 import { SIDEBAR } from "@/constants/dashboard";
 import { COLOURS } from "@/constants/colors";
+import { navStore } from "@/store/nav";
 
 
 const Sidebar = () => {
+  const { open, toggleOpen } = navStore();
   const currentPath = usePathname();
   const { clearUser } = useUserStore();
   const router = useRouter();
@@ -19,11 +21,18 @@ const Sidebar = () => {
   }
 
   return (
-    <aside className={`w-60 bg-[#F9F9FA] border-r h-screen fixed top-0 left-0`}>
+    <aside
+    className={`w-60 bg-[#F9F9FA] border-r h-screen fixed top-0 left-0 z-[1000] transition-transform duration-300 ease-in-out 
+      ${open ? 'transform translate-x-0' : '-translate-x-full'} md:translate-x-0`}
+  >
 
       <div className="px-5 pt-10">
           <h1 className="font-base text-xl">Logo</h1>
           <h1 className="font-base text-xl">Here</h1>
+      </div>
+
+      <div className="absolute top-3 right-4" onClick={toggleOpen}>
+      <i className="ri-close-large-fill text-2xl"></i>
       </div>
       <div className="px-3 py-5">
         <h4 className="font-bold text-gray-700 py-5 px-2 mb-3 text-sm">Menu</h4>

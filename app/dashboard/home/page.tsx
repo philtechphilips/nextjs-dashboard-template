@@ -8,7 +8,7 @@ import Analytics from "@/components/dashboard/home/Analytics";
 export default function Dashboard() {
   return (
     <DashboardLayout pageTitle="Dashboard">
-      <div className="w-full pl-[260px] px-5 bg-[#F9F9FA] min-h-screen overflow-x-scroll pr-5">
+      <div className="w-full md:pl-[260px] px-5 bg-[#F9F9FA] min-h-screen overflow-x-scroll pr-5">
         <h2 className="font-semibold text-2xl text-gray-800">
           Hello, Isola Pelumi 👋
         </h2>
@@ -18,7 +18,7 @@ export default function Dashboard() {
 
         <section className="mt-20">
           <Analytics />
-          
+
           <div className="bg-white rounded-xl p-5 w-full flex flex-col gap-5">
             <h1 className="text-gray-700">Bar Chart</h1>
             <ChartOne chartData={BarChartData.chartData} />
